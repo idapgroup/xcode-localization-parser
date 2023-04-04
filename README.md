@@ -1,9 +1,10 @@
 # Xcode Localization Helper
-A shell script to download a CSV file from Google Sheets and parse it into .lproj files.
+A shell script to download a CSV file from Google Sheets and parse it into .lproj files, as well as generating a L10n-Constants.swift file containing constants for localized strings, making it easy to reference strings in your Swift code. The script also supports runtime language switching, allowing you to change the app's language on the fly without needing to restart it.
 
 This Xcode Localization Helper script is designed to streamline the process of adding localization files to your Xcode project. The script performs the following tasks:
 - Downloads a CSV from the Google Sheets file containing localization strings for multiple languages.
 - Parses the CSV file into separate .lproj files for each language.
+- Generates a L10n-Constants.swift file containing constants for localized strings using the SwiftGen library, making it easy to reference strings in your Swift code.
 
 By automating these tasks, this script makes it easy to keep your Xcode project's localization files up-to-date and well-organized. Simply run the script whenever you need to update your localization files based on the latest CSV file. This will save you time and ensure that your Xcode project remains properly localized across all supported languages.
 
@@ -63,6 +64,10 @@ Before using the Xcode Localization Helper script, you need to set up the Google
 
     sh update-localization.sh
 
+6. **Runtime language switching support:**
+
+   The script also enables you to change the app's language at runtime using the L10n.languageProvider.selectedLanguage property. This allows you to switch languages within the app without having to restart it.
+
 
 
 ## **Google Sheet structure:**
@@ -85,3 +90,5 @@ Before using the Xcode Localization Helper script, you need to set up the Google
 ## **Acknowledgments:**
 
    The parsing script used in this project is based on the [LocalizationDemo](https://github.com/vivek-jl/LocalizationDemo) repository by Vivek Joshi. A big thank you to the author for providing a helpful script for the community.
+
+   This project also integrates the [SwiftGen](https://github.com/SwiftGen/SwiftGen) library to generate a `L10n-Constants.swift` file containing constants for localized strings. A big thank you to the authors and contributors of SwiftGen for creating such a useful library for the Swift community.

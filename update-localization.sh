@@ -2,6 +2,9 @@ languages=("en" "uk")
 SHEET_ID={SHEET_ID}
         
 rm -rf localization.csv
+rm -rf Generated/
+
+mkdir Generated
 
 comma_separated_languages=""
 
@@ -30,3 +33,4 @@ else
 fi
 
 ./StringsGenerator localization.csv "${comma_separated_languages}"
+./swiftgen strings en.lproj/Localizable.strings -o Generated/L10n-Constants.swift --templatePath localization-swift5.stencil --param publicAccess=true --param languages=${comma_separated_languages}
