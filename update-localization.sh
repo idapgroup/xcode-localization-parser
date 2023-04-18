@@ -1,6 +1,8 @@
 languages=("en" "uk")
+
 SHEET_ID={SHEET_ID}
-        
+TABLE_ID=0
+
 rm -rf localization.csv
 rm -rf Generated/
 
@@ -27,9 +29,9 @@ if [ -e "./credentials.json" ]; then
 
     ACCESS_TOKEN=$(gcloud auth print-access-token --scopes=https://www.googleapis.com/auth/drive.readonly)
 
-    curl -L -H "Authorization: Bearer $ACCESS_TOKEN" "https://www.googleapis.com/drive/v3/files/$SHEET_ID/export?mimeType=text/csv" > localization.csv
+    curl -L -H "Authorization: Bearer $ACCESS_TOKEN" "https://docs.google.com/spreadsheets/d/$SHEET_ID/export?exportFormat=csv&gid=$TABLE_ID" > localization.csv
 else
-    curl -L https://docs.google.com/spreadsheets/d/$SHEET_ID/export?exportFormat=csv > localization.csv
+    curl -L "https://docs.google.com/spreadsheets/d/$SHEET_ID/export?exportFormat=csv&gid=$TABLE_ID" > localization.csv
 fi
 
 ./StringsGenerator localization.csv "${comma_separated_languages}"

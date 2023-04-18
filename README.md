@@ -34,13 +34,11 @@ Before using the Xcode Localization Helper script, you need to set up the Google
    
    d. Fill in the service account details and click "Create".
    
-   e. In the "Grant this service account access to project" section, add the "Editor" role for "Google Drive API". Click "Continue" and then "Done".
+   e. On the "Service Accounts" page, find your newly created service account and click on the pencil icon to edit it.
    
-   f. On the "Service Accounts" page, find your newly created service account and click on the pencil icon to edit it.
+   f. Go to the "Keys" tab and click on "Add Key". Select "JSON" as the key type. This will download the `credentials.json` file.
    
-   g. Go to the "Keys" tab and click on "Add Key". Select "JSON" as the key type. This will download the `credentials.json` file.
-   
-   h. Move the `credentials.json` file to the same directory as the script.
+   g. Move the `credentials.json` file to the same directory as the script.
 
 4. **Grant access to the Google Sheet for the service account:**
    
@@ -57,8 +55,10 @@ Before using the Xcode Localization Helper script, you need to set up the Google
    a. Clone or download the script from the GitHub repository.
    
    b. Open the script in a text editor and replace {SHEET_ID} with your Google Sheets ID.
+
+   c. Optionaly you can add your table id.
    
-   c. Update the languages array with the language codes you want to use.
+   d. Update the languages array with the language codes you want to use.
 
 6. **Run sript:**
 
