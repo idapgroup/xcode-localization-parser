@@ -34,7 +34,7 @@ Before using the Xcode Localization Helper script, you need to set up the Google
    
    d. Fill in the service account details and click "Create".
    
-   e. On the "Service Accounts" page, find your newly created service account and click on the pencil icon to edit it.
+   e. On the "Service Accounts" page, find your newly created service account and click on it to edit.
    
    f. Go to the "Keys" tab and click on "Add Key". Select "JSON" as the key type. This will download the `credentials.json` file.
    
